@@ -1,0 +1,19 @@
+To implement the English to French Language Learning Portal according to the provided backend specifications, we will follow these steps for the migration files in the `/french_portal/french_portal/db/migrations/` directory:
+
+1. **Create Migration Files**: We will create migration files that define the database schema based on the specifications provided in the Backend Technical Specs.
+
+2. **Define Migration for Words Table**: The first migration file will create the `words` table with the specified fields.
+
+3. **Define Migration for Groups Table**: The second migration file will create the `groups` table.
+
+4. **Define Migration for Words Groups Table**: The third migration file will create the `words_groups` join table for many-to-many relationships between words and groups.
+
+5. **Define Migration for Study Sessions Table**: The fourth migration file will create the `study_sessions` table.
+
+6. **Define Migration for Study Activities Table**: The fifth migration file will create the `study_activities` table.
+
+7. **Define Migration for Word Review Items Table**: The sixth migration file will create the `word_review_items` table.
+
+8. **Create `__init__.py`**: Ensure that the `__init__.py` file is present to mark the migrations directory as a package.
+
+Once you instruct me on which migration file to create first, I will generate the corresponding code for that file.

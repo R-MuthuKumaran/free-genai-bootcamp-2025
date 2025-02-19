@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "parts": {
+            "word": "bonjour",
+            "translation": "hello",
+            "part_of_speech": "greeting"
+        }
+    },
+    {
+        "id": 2,
+        "parts": {
+            "word": "merci",
+            "translation": "thank you",
+            "part_of_speech": "expression"
+        }
+    }
+]

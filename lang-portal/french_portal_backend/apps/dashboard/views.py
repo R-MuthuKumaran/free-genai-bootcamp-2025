@@ -1,45 +1,41 @@
-To implement the English to French Language Learning Portal according to the provided backend specifications, we will start with the following steps:
+from django.http import JsonResponse
+from rest_framework import viewsets
+from .models import Word, StudySession
+from .serializers import WordSerializer, StudySessionSerializer
 
-1. **Project Setup**: 
-   - Create the root directory `french_portal`.
-   - Initialize a Django project using `manage.py`.
-   - Set up the main project configuration in the `french_portal` directory.
+def last_study_session(request):
+    # Dummy data for example
+    data = {
+        "id": 111,
+        "group_id": 222,
+        "created_at": "2025-02-08T17:20:23-05:00",
+        "study_activity_id": 777,
+        "group_name": "Salutations"
+    }
+    return JsonResponse(data)
 
-2. **Django Configuration**:
-   - Configure settings in `french_portal/settings.py`.
-   - Define the root URL configuration in `french_portal/urls.py`.
+def study_progress(request):
+    # Dummy data for example
+    data = {
+        "total_words_studied": 30,
+        "total_available_words": 324
+    }
+    return JsonResponse(data)
 
-3. **Create Django Apps**:
-   - Create the **Dashboard App**:
-     - Implement the views in `dashboard/views.py`.
-     - Set up URL routing in `dashboard/urls.py`.
-   - Create the **Words App**:
-     - Implement the views in `words/views.py`.
-     - Set up URL routing in `words/urls.py`.
-   - Create the **Groups App**:
-     - Implement the views in `groups/views.py`.
-     - Set up URL routing in `groups/urls.py`.
-   - Create the **Study Sessions App**:
-     - Implement the views in `study_sessions/views.py`.
-     - Set up URL routing in `study_sessions/urls.py`.
-   - Create the **Study Activities App**:
-     - Implement the views in `study_activities/views.py`.
-     - Set up URL routing in `study_activities/urls.py`.
+def quick_stats(request):
+    # Dummy data for example
+    data = {
+        "success_rate": 75.0,
+        "total_study_sessions": 6,
+        "total_active_groups": 1,
+        "study_streak_days": 2
+    }
+    return JsonResponse(data)
 
-4. **Database Setup**:
-   - Create the `db/migrations` directory for migration files.
-   - Create the `db/seeds/french_words_seed.json` file for initial vocabulary data.
+class WordViewSet(viewsets.ModelViewSet):
+    queryset = Word.objects.all()
+    serializer_class = WordSerializer
 
-5. **Task Automation**:
-   - Implement task automation in `tasks/tasks.py`.
-
-6. **Requirements Management**:
-   - Create `requirements.txt` for necessary Python packages.
-
-7. **Testing**:
-   - Implement tests in each app's `tests.py` file.
-
-8. **Documentation**:
-   - Create a README file for project documentation.
-
-Please instruct me on which specific step you would like to implement first, or if you want to start with the implementation of the `dashboard/views.py` file directly.
+class StudySessionViewSet(viewsets.ModelViewSet):
+    queryset = StudySession.objects.all()
+    serializer_class = StudySessionSerializer
